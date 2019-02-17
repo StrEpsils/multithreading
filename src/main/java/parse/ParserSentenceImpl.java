@@ -13,7 +13,7 @@ public class ParserSentenceImpl implements ParserSentence {
     @Override
     public String[] parseSentence(String context) {
         LOGGER.debug("Получение контекста из потока.");
-        return context.replace("\r\n", " ").trim().split("[.]");
+        return context.replace("\r\n|[\n\r]", " ").trim().split("\\s*[.!?]\\s*");
     }
 
     /**

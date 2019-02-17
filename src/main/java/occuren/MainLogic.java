@@ -34,7 +34,7 @@ public class MainLogic extends Thread {
             for (String arrSentence : arraySentence) {
                 if (FindContainsService.isFind(parserSentence.parseWordsOneSentence(arrSentence), words)) {
                     SaveResults saveResults = new SaveResultImpl();
-                    saveResults.save(arrSentence.trim(), path);
+                    saveResults.save(arrSentence, path);
                 }
             }
             LOGGER.debug("Завершение нити {}", currentThread().getName());
